@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <head>
+      <link rel="stylesheet" href="style.css" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+<div class="container">
+  <img src="adres.png" style="width:50%; height: 30%;">
+  <div></div>
+    <div class="form-background">
+    <h1>Iniciar sesión</h1>
+   <form>
+    <input type="email" name="email" placeholder="Email" id="email" onchange="validEmail(event)">
+    <!--  -->
+    <span id="span_email"></span>
+    <br>
+    <input type="password" name="pasword" placeholder="Contraseña" id="password" onchange="validField(event, password , 1, 'login')" >
+    <span id="span_pasword"></span>
+    <br><br>
+    <input type="submit" value="Ingresar" onclick="login(event)" id="btn_login">
+  </form>
+     </div>
+  <div class="login">
+    <p>¿Necesitas una cuenta? <a href="#" >Registrarse</a></p>
+    <!-- id="new" data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+  </div>
+  </div>
+<script src="service.js"></script>
+</body>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clear(event)"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <label>Email</label>
+            <input value="" name="emailuser" id="emailuser" class="inputform" type="text" onchange="validField(event, emailuser, 1, '')"/>
+            <span id="span_emailuser" style="display: none;"></span>
+          </div>
+          <div class="col-md-12">
+            <label>Contraseña</label>
+            <input value="" name="doc" id="clave" class="inputform" type="text" onchange="validField(event, clave, 1, '')"/>
+            <span id="span_clave" style="display: none;"></span>
+          </div>
+        </div>    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clear(event)">Close</button>
+        <button type="button" class="btn btn-primary" onclick="createUser(event)" data-bs-dismiss="modal" id="create" disabled>Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</html>
+  
